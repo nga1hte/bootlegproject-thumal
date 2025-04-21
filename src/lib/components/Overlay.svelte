@@ -24,11 +24,11 @@
 	onclick={handleClose}
 >
 	<div
-		class="bg-gray-900 text-white rounded-md px-8 py-10 relative max-w-lg"
+		class="bg-gray-900 text-white rounded-md px-4 sm:px-8 py-6 sm:py-10 relative max-w-[90%] sm:max-w-lg"
 		onclick={handleOverlayClick}
 	>
 		<button
-			class="absolute top-2 right-3 text-4xl text-gray-300 hover:-translate-y-0.5 transition-transform"
+			class="absolute top-1 right-2 sm:top-2 sm:right-3 text-3xl sm:text-4xl text-gray-300 hover:-translate-y-0.5 transition-transform"
 			onclick={handleClose}>&times;</button
 		>
 		<slot />
