@@ -41,7 +41,7 @@
 
 <header class="bg-black text-white">
   <div class="container mx-auto px-4 py-3">
-    <div class="flex items-center justify-center space-x-8">
+    <div class="flex items-center justify-center space-x-4">
       <a href="/" class="text-2xl font-bold hover:text-gray-300 transition-colors">THUMAL</a>
       <div class="text-2xl font-bold">#{wordNumber}</div>
       <a href="/leaderboard" class="hover:text-gray-300 transition-colors" title="Leaderboard" aria-label="Leaderboard">
