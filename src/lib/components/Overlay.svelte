@@ -1,19 +1,15 @@
 <script lang="ts">
-	import { setAndSaveGameState } from "$lib/state/gameState.svelte";
 	import { fade } from 'svelte/transition';
-	import { CONSTANTS } from "$lib/ts/constants";
+
+	export let onClose: () => void;
 
 	const handleOverlayClick = (e: MouseEvent) => {
 		e.stopPropagation();
 	};
 
-	const handleClose = () => {
-		setAndSaveGameState(CONSTANTS.GAME_STATES.PLAYING);
-	}
-
 	const handleKeydown = (e: KeyboardEvent) => {
 		if (e.key === 'Escape') {
-			handleClose();
+			onClose();
 		}
 	}
 </script>
@@ -21,7 +17,7 @@
 <div
 	class="w-screen h-screen top-0 left-0 fixed text-white flex justify-center items-center opacity-95"
 	transition:fade
-	onclick={handleClose}
+	onclick={onClose}
 >
 	<div
 		class="bg-gray-900 text-white rounded-md px-4 sm:px-8 py-6 sm:py-10 relative max-w-[90%] sm:max-w-lg"
@@ -29,7 +25,7 @@
 	>
 		<button
 			class="absolute top-1 right-2 sm:top-2 sm:right-3 text-3xl sm:text-4xl text-gray-300 hover:-translate-y-0.5 transition-transform"
-			onclick={handleClose}>&times;</button
+			onclick={onClose}>&times;</button
 		>
 		<slot />
 	</div>

@@ -1,8 +1,11 @@
 <script lang="ts">
   import { gameState, resetGame, setAndSaveCurrentWord, setAndSaveGameState } from '$lib/state/gameState.svelte';
   import { CONSTANTS } from '$lib/ts/constants';
+  import Overlay from './Overlay.svelte';
+  import NewPlayerInfo from './NewPlayerInfo.svelte';
 
   let { wordNumber } = $props<{ wordNumber: number }>();
+  let showInstructions = $state(false);
 
   const handleNewGame = async () => {
     try {
@@ -30,6 +33,10 @@
       console.error('Error fetching new word:', error);
     }
   };
+
+  const toggleInstructions = () => {
+    showInstructions = !showInstructions;
+  };
 </script>
 
 <header class="bg-black text-white">
@@ -47,6 +54,16 @@
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
         </svg>
       </a>
+      <button 
+        onclick={toggleInstructions}
+        class="hover:text-gray-300 transition-colors"
+        title="How to play"
+        aria-label="How to play"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+      </button>
       <div class="flex items-center space-x-4">
         <div class="text-sm">
           {#if gameState.state === CONSTANTS.GAME_STATES.ERROR}
@@ -64,6 +81,12 @@
   </div>
   <div class="border-b border-gray-700 max-w-2xl mx-auto"></div>
 </header>
+
+{#if showInstructions}
+  <Overlay onClose={toggleInstructions}>
+    <NewPlayerInfo />
+  </Overlay>
+{/if}
 
 <style>
   a {
