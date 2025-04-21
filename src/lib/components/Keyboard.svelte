@@ -20,9 +20,9 @@
     const isSpecialKey = (letter: string) => letter === 'ENTER' || letter === 'DEL';
 </script>
 
-<div class="w-full max-w-md px-2">
+<div>
     {#each CONSTANTS.KEYBOARD_ROWS_ARR as row }
-    <div class="flex gap-1 sm:gap-2 justify-center mb-1 sm:mb-2">
+    <div class="flex gap-1 justify-center mb-2">
         {#each row as letter }
             <button 
                 onclick={() => handleClick(letter)} 
@@ -30,12 +30,12 @@
                         transition-all duration-200 ease-in-out
                         hover:scale-105 hover:brightness-110
                         active:scale-95 active:brightness-90
-                        ${isSpecialKey(letter) ? 'px-2 sm:px-4 h-8 sm:h-10 text-xs sm:text-base' : 'w-7 sm:w-10 h-8 sm:h-10 text-xs sm:text-base'}
+                        ${isSpecialKey(letter) ? 'px-4 h-10' : 'w-10 h-10'}
                         ${getBgClass(letter) || 'bg-gray-700 hover:bg-gray-600'}`}
             >
                 {letter}
             </button>
         {/each}
-    </div>
+        </div>
     {/each}
 </div>
