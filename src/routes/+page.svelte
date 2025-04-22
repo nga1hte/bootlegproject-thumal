@@ -13,6 +13,7 @@
     
   let loaded = false;
   let userId: string | null = null;
+  let showInstructions = false;
 
   async function checkAndCreateUser() {
     try {
@@ -55,7 +56,7 @@
   });
 
   const handleKeydown = (e: KeyboardEvent) => {
-      if(gameState.state !== CONSTANTS.GAME_STATES.PLAYING || e.shiftKey || e.ctrlKey){
+      if(e.shiftKey || e.ctrlKey){
           return;
       }
       
@@ -66,6 +67,10 @@
       else if(e.code === "Enter"){
           e.preventDefault();
           guessWord();
+      }
+      else if(key === "?"){
+          e.preventDefault();
+          showInstructions = true;
       }
       else if(isLetter(key)){
           guessLetter(key);
@@ -81,8 +86,8 @@
 <Header wordNumber={wordNumber.number} />
 <svelte:window onkeydown={handleKeydown}/>
 {#if loaded }
-  {#if gameState.state === CONSTANTS.GAME_STATES.NEW_PLAYER }
-      <Overlay>
+  {#if showInstructions}
+      <Overlay onClose={() => showInstructions = false}>
           <NewPlayerInfo/>
       </Overlay>
   {/if}
