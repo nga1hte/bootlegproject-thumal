@@ -60,7 +60,10 @@
                 {/each}
             </div>
         {:else}
-            <div class="text-center text-white">No players found</div>
+            <div class="text-center text-white">
+                <p>No registered users yet.</p>
+                <p class="text-gray-400 text-sm mt-2">Register to be the first on the leaderboard!</p>
+            </div>
         {/if}
     </div>
 </div> 

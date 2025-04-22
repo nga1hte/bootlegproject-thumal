@@ -4,26 +4,47 @@ import type { RequestHandler } from './$types';
 
 export const GET: RequestHandler = async () => {
     try {
-        // Fetch top 100 players ordered by total wins
-        const { data, error } = await supabase
+        // First get all registered users
+        const { data: registeredUsers, error: authError } = await supabase
+            .from('auth_users')
+            .select('user_id, username')
+            .eq('is_registered', true);
+
+        if (authError) {
+            throw authError;
+        }
+
+        if (!registeredUsers || registeredUsers.length === 0) {
+            return json({ leaderboard: [] });
+        }
+
+        // Get user IDs of registered users
+        const userIds = registeredUsers.map(user => user.user_id);
+
+        // Then get their statistics
+        const { data: stats, error: statsError } = await supabase
             .from('user_statistics')
-            .select('username, total_wins, total_games_played, best_streak, average_guesses')
+            .select('*')
+            .in('user_id', userIds)
             .order('total_wins', { ascending: false })
             .limit(100);
 
-        if (error) {
-            throw error;
+        if (statsError) {
+            throw statsError;
         }
 
-        // Add rank to each player
-        const leaderboard = data.map((player, index) => ({
-            rank: index + 1,
-            username: player.username,
-            totalWins: player.total_wins,
-            gamesPlayed: player.total_games_played,
-            bestStreak: player.best_streak,
-            averageGuesses: Number(player.average_guesses.toFixed(1))
-        }));
+        // Combine the data and add rank
+        const leaderboard = stats.map((stat, index) => {
+            const user = registeredUsers.find(u => u.user_id === stat.user_id);
+            return {
+                rank: index + 1,
+                username: user?.username || 'Unknown',
+                totalWins: stat.total_wins,
+                gamesPlayed: stat.total_games_played,
+                bestStreak: stat.best_streak,
+                averageGuesses: Number(stat.average_guesses.toFixed(1))
+            };
+        });
 
         return json({ leaderboard });
     } catch (error) {
