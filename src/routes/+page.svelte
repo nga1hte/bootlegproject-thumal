@@ -99,6 +99,12 @@
           <div class="mt-4 md:mt-8">
               <Keyboard/>
           </div>
+          <div class="mt-8 text-center">
+           Visit 
+              <a href="https://bootlegproject.shop" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:text-blue-300 transition-colors">
+                  bootlegproject.
+              </a>
+          </div>
       </div>
   </div>
 {/if}

@@ -25,7 +25,7 @@
             <span class="text-4xl font-bold">G</span>  
         </div>
     </div>
-    <p>Laimal <span class="font-bold">A</span> bang thumal ah tel, a om na mun a dik kei a leh a rong eng di.</p>
+    <p>Laimal <span class="font-bold">T</span> bang thumal ah tel, a om na mun a dik kei a leh a rong eng di.</p>
     <div class="flex gap-1 mb-4">
         <div class="w-14 h-14 flex items-center border-gray-600 border-2 justify-center" role="img" aria-label="Letter A">
             <span class="text-4xl font-bold">A</span>  
