@@ -16,12 +16,12 @@
 </script>
 
 <div
-	class="w-screen h-screen top-0 left-0 fixed text-white flex justify-center items-center opacity-95"
+	class="w-screen h-screen top-0 left-0 fixed text-white flex justify-center items-center opacity-95 z-50"
 	transition:fade
 	onclick={dismissible ? onClose : undefined}
 >
 	<div
-		class="bg-gray-900 text-white rounded-md px-4 sm:px-8 py-6 sm:py-10 relative max-w-[90%] sm:max-w-lg"
+		class="bg-gray-900 text-white rounded-md px-4 sm:px-8 py-6 sm:py-10 relative max-w-[90%] sm:max-w-lg z-50"
 		onclick={handleOverlayClick}
 	>
 		{#if dismissible}
