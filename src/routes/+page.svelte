@@ -56,7 +56,7 @@
   });
 
   const handleKeydown = (e: KeyboardEvent) => {
-      if(e.shiftKey || e.ctrlKey){
+      if(e.shiftKey || e.ctrlKey || gameState.state === CONSTANTS.GAME_STATES.WIN){
           return;
       }
       
@@ -102,7 +102,7 @@
               {/each}
           </div>
           <div class="mt-4 md:mt-8">
-              <Keyboard/>
+              <Keyboard gameState={gameState.state}/>
           </div>
           <div class="mt-8 text-center">
            Visit 

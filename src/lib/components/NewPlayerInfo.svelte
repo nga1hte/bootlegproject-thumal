@@ -3,7 +3,7 @@
 </script>
 
 <div class="flex flex-col gap-2" transition:fade role="dialog" aria-label="Game Instructions">
-    <p><span class="font-bold">THUMAL</span> dik thumal mah 6(guk) zang in sui khiak sawm in.</p>
+    <p><span class="font-bold">THUMAL</span> dik guk(6) vei in sui khiak sawm in.</p>
     <p>Thumal na gelh lut te kha eipau mah ah om ahih di.</p>
     <p>Na gelh lut khit chiang a, a rong ki khek di, huai te apat thumal dik na naih leh gam lat dan sui in.</p>
     <div class="border-[0.5px] my-2 border-gray-100"></div>
