@@ -93,11 +93,11 @@
   {/if}
   <div class="w-full h-screen bg-black text-white mx-auto min-w-10 flex flex-col items-center">
       <div class="flex flex-col gap-y-2 max-w-2xl w-full items-center pt-2">
-          <Alert/>
           <div class="text-center p-4 bg-gray-800 rounded-lg shadow-lg">
               <h3 class="text-xl font-bold mb-2">Competition Start Time</h3>
               <p class="text-lg">Competition starts at <span class="text-yellow-400 font-semibold">9:00 PM</span></p>
           </div>
+          <Alert/>
           <div class="flex flex-col gap-y-1">
               {#each Array(CONSTANTS.MAX_GUESSES) as _, i}
                   <div class="flex mx-auto space-x-1 mb-1 text-white">
