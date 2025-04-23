@@ -62,6 +62,6 @@
         </div>
     </div>
     <div class="border-[0.5px] my-2 border-gray-100"></div>
-    <p class="font-bold">Minute 30 zoh thumal thak om zel di.</p>
+    <p class="font-bold">Dakkal 3 zoh thumal thak om zel di. Schedule: 9,12,3,6</p>
     <p class="font-bold">Thumal thak om chiang a, thumal lui pen atung lamah dawk ding hi.</p>
 </div>

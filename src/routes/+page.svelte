@@ -93,10 +93,6 @@
   {/if}
   <div class="w-full h-screen bg-black text-white mx-auto min-w-10 flex flex-col items-center">
       <div class="flex flex-col gap-y-2 max-w-2xl w-full items-center pt-2">
-          <div class="text-center p-4 bg-gray-800 rounded-lg shadow-lg">
-              <h3 class="text-xl font-bold mb-2">Competition Start Time</h3>
-              <p class="text-lg">Competition starts at <span class="text-yellow-400 font-semibold">9:00 PM</span></p>
-          </div>
           <Alert/>
           <div class="flex flex-col gap-y-1">
               {#each Array(CONSTANTS.MAX_GUESSES) as _, i}
@@ -109,7 +105,7 @@
               <Keyboard gameState={gameState.state}/>
           </div>
           <div class="mt-8 text-center">
-           Visit 
+           Top the leaderboard and win free merch from 
               <a href="https://bootlegproject.shop" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:text-blue-300 transition-colors">
                   bootlegproject.
               </a>

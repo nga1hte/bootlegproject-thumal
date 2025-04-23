@@ -40,8 +40,8 @@
 <div class="flex flex-col items-center justify-start min-h-screen bg-black">
     <div class="w-full max-w-[500px] flex flex-col gap-2 pt-4">
         <div class="bg-gray-800 border-2 border-gray-700 rounded p-3 text-center">
-            <h1 class="text-white">Leaderboard ki pan thak ding hi. Dak 9 ah.</h1>
             <h1 class="text-2xl text-white">Leaderboard</h1>
+            <p class="text-green-500">2nd May tana sang pen in free merch from <a href="https://bootlegproject.shop" class="underline">bootlegproject</a></p>
         </div>
 
         {#if loading}
