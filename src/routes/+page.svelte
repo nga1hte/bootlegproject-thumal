@@ -105,7 +105,8 @@
               <Keyboard gameState={gameState.state}/>
           </div>
           <div class="mt-8 text-center">
-           Top the leaderboard and win free merch from 
+          <p>New word at: 9, 12, 3, 6 AM/PM daily.</p>
+          Top the leaderboard and win free merch from 
               <a href="https://bootlegproject.shop" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:text-blue-300 transition-colors">
                   bootlegproject.
               </a>
