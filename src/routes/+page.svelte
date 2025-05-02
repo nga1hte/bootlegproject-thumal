@@ -106,10 +106,10 @@
           </div>
           <div class="mt-8 text-center">
           <p>New word at: 9, 12, 3, 6 AM/PM daily.</p>
-          Top the leaderboard and win free merch from 
+          Visit
               <a href="https://bootlegproject.shop" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:text-blue-300 transition-colors">
                   bootlegproject.
-              </a>
+              </a> 
           </div>
       </div>
   </div>
